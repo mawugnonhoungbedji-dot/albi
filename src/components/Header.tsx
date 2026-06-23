@@ -1,7 +1,7 @@
 import { Home, Folder, Newspaper, Megaphone, Heart, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-const logoImg = "/images/Logo.jpeg";
+const logoImg = "/images/Logo.webp";
 
 interface HeaderProps {
   activePage: string;

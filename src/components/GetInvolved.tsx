@@ -248,9 +248,12 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
           >
             <div className="aspect-[4/3] bg-zinc-100 overflow-hidden relative group">
               <img 
-                src="/images/albi_applying_sunscreen_1781884143114.jpg" 
+                src="/images/albi_applying_sunscreen_1781884143114.webp" 
                 alt="Application bienveillante de crème solaire au Bénin" 
-                referrerPolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
+                width={840}
+                height={630}
                 className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-brand-dark)]/40 via-transparent to-transparent pointer-events-none" />
@@ -322,10 +325,10 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
         >
           {criticalIssues.map((issue, idx) => {
             const bgImages = [
-              "/images/albi_prevention_care_1781884154813.jpg",
-              "/images/albi_children_school_1781884113577.jpg",
-              "/images/volunteers_park_1781879709971.jpg",
-              "/images/albi_sun_cream_sage_1781884128743.jpg"
+              "/images/albi_prevention_care_1781884154813.webp",
+              "/images/albi_children_school_1781884113577.webp",
+              "/images/volunteers_park_1781879709971.webp",
+              "/images/albi_sun_cream_sage_1781884128743.webp"
             ];
             const bgGradients = [
               "linear-gradient(to bottom, rgba(12, 16, 12, 0.93) 0%, rgba(12, 16, 12, 0.96) 100%)",
@@ -380,9 +383,9 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {pillarSolutions.map((solution, idx) => {
               const bgImages = [
-                "/images/albi_prevention_care_1781884154813.jpg",
-                "/images/albi_children_school_1781884113577.jpg",
-                "/images/volunteers_park_1781879709971.jpg"
+                "/images/albi_prevention_care_1781884154813.webp",
+                "/images/albi_children_school_1781884113577.webp",
+                "/images/volunteers_park_1781879709971.webp"
               ];
               const bgGradients = [
                 "linear-gradient(to bottom, rgba(10, 15, 12, 0.93) 0%, rgba(10, 15, 12, 0.97) 100%)",
@@ -507,9 +510,9 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
             {pricingPackages.map((pkg, idx) => {
               const bgImages = [
-                "/images/albi_sun_cream_sage_1781884128743.jpg",
-                "/images/albi_children_school_1781884113577.jpg",
-                "/images/albi_prevention_care_1781884154813.jpg"
+                "/images/albi_sun_cream_sage_1781884128743.webp",
+                "/images/albi_children_school_1781884113577.webp",
+                "/images/albi_prevention_care_1781884154813.webp"
               ];
               const bgGradients = [
                 "linear-gradient(to bottom, rgba(12, 18, 12, 0.94) 0%, rgba(12, 18, 12, 0.97) 100%)",

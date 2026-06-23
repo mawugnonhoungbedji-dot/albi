@@ -43,7 +43,7 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       tag: "ACTIONS DIRECTES",
       title: "Nos Actions de Terrain",
       description: "Acheminement et distribution de crèmes solaires SPF 50+ de grade dermatologique au cœur du Bénin.",
-      image: "/images/albi_prevention_care_1781884154813.jpg",
+      image: "/images/albi_prevention_care_1781884154813.webp",
       category: "Dermatologie",
       icon: <Shield className="w-5 h-5 text-amber-700" />,
       tagColor: "bg-amber-100/90 text-amber-900 border-amber-200"
@@ -53,7 +53,7 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       tag: "RÉSILIENCE",
       title: "L'Histoire de Carine",
       description: "Comment une histoire familiale intime a enfanté un mouvement médical et d'inclusion souverain.",
-      image: "/images/albi_sun_cream_sage_1781884128743.jpg",
+      image: "/images/albi_sun_cream_sage_1781884128743.webp",
       category: "Histoire",
       icon: <BookOpen className="w-5 h-5 text-emerald-700" />,
       tagColor: "bg-emerald-100/90 text-emerald-900 border-emerald-200"
@@ -63,7 +63,7 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       tag: "SENSIBILISATION",
       title: "Activités & Campagnes",
       description: "Sensibiliser de façon intensive dans les écoles et villages pour éteindre les mythes infondés.",
-      image: "/images/albi_children_school_1781884113577.jpg",
+      image: "/images/albi_children_school_1781884113577.webp",
       category: "Éducation",
       icon: <Sun className="w-5 h-5 text-amber-600" />,
       tagColor: "bg-amber-50 text-amber-850 border-amber-300"
@@ -73,7 +73,7 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       tag: "SOLIDARITÉ US",
       title: "Rejoindre & Parrainer",
       description: "Participer financièrement à l'achat de soins de secours, offrir des lunettes UV ou devenir parrain d'un orphelin.",
-      image: "/images/albi_applying_sunscreen_1781884143114.jpg",
+      image: "/images/albi_applying_sunscreen_1781884143114.webp",
       category: "Soutien",
       icon: <Heart className="w-5 h-5 text-rose-600" />,
       tagColor: "bg-rose-100/90 text-rose-900 border-rose-200"
@@ -83,7 +83,7 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       tag: "PERSPECTIVES",
       title: "Réseau International",
       description: "Bâtir des coopérations scientifiques et obtenir la subvention complète des examens dermatologiques d'albi.",
-      image: "/images/volunteers_park_1781879709971.jpg",
+      image: "/images/volunteers_park_1781879709971.webp",
       category: "Avenir",
       icon: <Globe className="w-5 h-5 text-indigo-700" />,
       tagColor: "bg-indigo-100/90 text-indigo-900 border-indigo-200"

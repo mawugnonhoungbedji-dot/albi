@@ -48,7 +48,7 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           }}
           whileHover={{ y: -8, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
           style={{
-            backgroundImage: "linear-gradient(to right, rgba(10, 15, 10, 0.96) 0%, rgba(10, 15, 10, 0.85) 60%, rgba(10, 15, 10, 0.5) 100%), url('/images/albi_prevention_care_1781884154813.jpg')"
+            backgroundImage: "linear-gradient(to right, rgba(10, 15, 10, 0.96) 0%, rgba(10, 15, 10, 0.85) 60%, rgba(10, 15, 10, 0.5) 100%), url('/images/albi_prevention_care_1781884154813.webp')"
           }}
           className="lg:col-span-6 bg-cover bg-center border border-zinc-800 rounded-[2.2rem] p-8 md:p-10 flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-500 min-h-[320px] text-white group"
         >
@@ -93,9 +93,12 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           
           {/* Background image of school children */}
           <img 
-            src="/images/albi_children_school_1781884113577.jpg" 
+            src="/images/albi_children_school_1781884113577.webp" 
             alt="Enfants à l'école" 
-            referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
+            width={800}
+            height={600}
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           />
           {/* Dark Forest Glaze Overlay for incredible readibility & contrast */}
@@ -137,9 +140,12 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           
           {/* Background image of sunshine & care */}
           <img 
-            src="/images/albi_applying_sunscreen_1781884143114.jpg" 
+            src="/images/albi_applying_sunscreen_1781884143114.webp" 
             alt="Noël solidaire" 
-            referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
+            width={800}
+            height={600}
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           />
           {/* Deep/Rich Forest Glaze Overlay for highly legible text */}

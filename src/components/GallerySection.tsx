@@ -4,17 +4,17 @@ import { motion, AnimatePresence } from "motion/react";
 
 const GALLERY_IMGS = [
   {
-    url: "/images/albi_children_school_1781884113577.jpg",
+    url: "/images/albi_children_school_1781884113577.webp",
     title: "Sourires et Chapeaux de Soleil",
     descr: "Des enfants épanouis à l'école grâce aux chapeaux à larges bords distribués par Albi International."
   },
   {
-    url: "/images/albi_applying_sunscreen_1781884143114.jpg",
+    url: "/images/albi_applying_sunscreen_1781884143114.webp",
     title: "Soin et Prévention Cutanée",
     descr: "Application d'écran solaire SPF 50+ hautement protecteur pour contrer l'absence de mélanine."
   },
   {
-    url: "/images/albi_sun_cream_sage_1781884128743.jpg",
+    url: "/images/albi_sun_cream_sage_1781884128743.webp",
     title: "Kits de Protection Individuelle",
     descr: "Chapeaux à larges bords, paires de lunettes UV et crèmes protectrices prêts à être distribués."
   }
@@ -91,9 +91,12 @@ export default function GallerySection() {
           
           <div className="relative w-full rounded-t-[50vw] md:rounded-t-[380px] overflow-hidden aspect-[4/3] md:aspect-[16/9] shadow-md border-4 border-white">
             <img
-              src="/images/albi_children_school_1781884113577.jpg"
+              src="/images/albi_children_school_1781884113577.webp"
               alt="Enfants souriants à l'école"
-              referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
+              width={1200}
+              height={675}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
             />
             {/* Absolute overlay dark */}
