@@ -1,0 +1,6 @@
+{
+  "name": "Albi International",
+  "description": "Une plateforme solidaire interactive pour l'association Albi International au Bénin, magnifiée par une direction artistique monochrome dorée.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
