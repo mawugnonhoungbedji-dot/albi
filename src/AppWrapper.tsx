@@ -10,7 +10,7 @@
 
 import { useState } from "react";
 import Header from "./components/Header";
-import logoImg from "./assets/images/Logo.jpeg";
+const logoImg = "/images/Logo.jpeg";
 import Hero from "./components/Hero";
 import RunningBanner from "./components/RunningBanner";
 import SolidarityCarousel from "./components/SolidarityCarousel";
