@@ -46,7 +46,17 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
   const [sponsorshipType, setSponsorshipType] = useState<string>("cream");
   const [sponsorshipQty, setSponsorshipQty] = useState<number>(1);
 
+  const handleContactClick = (messageContext?: string) => {
+    const defaultMessage = "Bonjour l'association AlbiInternational, je souhaite vous contacter pour en savoir plus ou soutenir votre action de terrain au Bénin.";
+    const message = messageContext || defaultMessage;
+    window.open(`https://wa.me/22997494591?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
+
   const openModal = (type: ModalType, project: ProjectItem | null = null) => {
+    if (type === "contact") {
+      handleContactClick();
+      return;
+    }
     setSelectedProject(project);
     setModalType(type);
   };
@@ -71,7 +81,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
       
       <div>
         {/* 1. Header Navigation */}
-        <Header activePage={pageId} onPageChange={changePage} onContactClick={() => openModal("contact")} />
+        <Header activePage={pageId} onPageChange={changePage} onContactClick={() => handleContactClick()} />
 
         {/* 2. Main Page Layout */}
         <main className="relative overflow-hidden">
@@ -528,7 +538,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                         </p>
                         <div className="pt-3">
                           <button 
-                            onClick={() => openModal("contact")}
+                            onClick={() => handleContactClick("Bonjour l'association AlbiInternational, je souhaite vous contacter concernant le pôle logistique (dons de crèmes solaires, lunettes ou matériel d'optique) depuis le site web.")}
                             className="inline-flex items-center gap-2 bg-[var(--color-brand-olive-light)] hover:bg-white text-[var(--color-brand-dark)] text-xs font-black uppercase tracking-wider py-4 px-8 rounded-full transition-colors cursor-pointer"
                           >
                             Écrire à Notre Pôle Logistique
@@ -545,7 +555,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
               {/* PAGE 3: HISTOIRE & VISION */}
               {pageId === "philosophy" && (
                 <Introduction
-                  onAboutClick={() => openModal("contact")}
+                  onAboutClick={() => handleContactClick("Bonjour l'association AlbiInternational, je souhaite vous contacter directement suite à la lecture de votre histoire et vision sur le site web.")}
                   onCampaignsClick={() => changePage("campaigns")}
                 />
               )}
@@ -811,7 +821,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
 
                   {/* Get involved accordion interactives and Donation lists */}
                   <GetInvolved
-                    onVolunteerClick={() => openModal("contact")}
+                    onVolunteerClick={() => handleContactClick("Bonjour l'association AlbiInternational, je souhaite devenir bénévole pour soutenir vos actions au Bénin.")}
                     onShareClick={() => openModal("share")}
                   />
                 </div>
@@ -886,7 +896,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
               </li>
               <li>
                 <button 
-                  onClick={() => openModal("contact")} 
+                  onClick={() => handleContactClick()} 
                   className="hover:text-[var(--color-brand-olive-light)] transition-colors text-left cursor-pointer block"
                 >
                   Contacter notre Équipe
