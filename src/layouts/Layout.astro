@@ -1,5 +1,6 @@
 ---
 import '../index.css';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
   title: string;
@@ -201,5 +202,6 @@ const jsonLdEvent = JSON.stringify({
   </head>
   <body>
     <slot />
+    <SpeedInsights />
   </body>
 </html>
