@@ -264,7 +264,7 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
             {/* Bento Card 1: Top Left - Large Horizontal Card (Skin Cancer) */}
             <div 
               style={{
-                backgroundImage: "linear-gradient(to right, rgba(15, 20, 15, 0.95) 0%, rgba(15, 20, 15, 0.85) 60%, rgba(15, 20, 15, 0.7) 100%), url('/src/assets/images/albi_applying_sunscreen_1781884143114.jpg')"
+                backgroundImage: "linear-gradient(to right, rgba(15, 20, 15, 0.95) 0%, rgba(15, 20, 15, 0.85) 60%, rgba(15, 20, 15, 0.7) 100%), url('/images/albi_applying_sunscreen_1781884143114.jpg')"
               }}
               className="md:col-span-8 bg-cover bg-center border border-zinc-800 rounded-3.5xl p-6.5 md:p-8 shadow-md flex flex-col md:flex-row gap-6 md:items-center justify-between overflow-hidden relative min-h-[300px] text-white"
             >
@@ -333,7 +333,7 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
             {/* Bento Card 4: Bottom Right - Large Horizontal Card (Myths & Superstitions) */}
             <div 
               style={{
-                backgroundImage: "linear-gradient(to right, rgba(20, 10, 10, 0.95) 0%, rgba(20, 10, 10, 0.85) 60%, rgba(20, 10, 10, 0.7) 100%), url('/src/assets/images/albi_children_school_1781884113577.jpg')"
+                backgroundImage: "linear-gradient(to right, rgba(20, 10, 10, 0.95) 0%, rgba(20, 10, 10, 0.85) 60%, rgba(20, 10, 10, 0.7) 100%), url('/images/albi_children_school_1781884113577.jpg')"
               }}
               className="md:col-span-8 bg-cover bg-center border border-zinc-800 rounded-3.5xl p-6.5 md:p-8 shadow-md flex flex-col md:flex-row gap-6 md:items-center justify-between overflow-hidden relative min-h-[300px] text-white"
             >
@@ -463,7 +463,7 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
           {/* Card 2: School kits */}
           <div 
             style={{
-              backgroundImage: "linear-gradient(to bottom, rgba(10, 15, 25, 0.92) 0%, rgba(10, 15, 25, 0.97) 100%), url('/src/assets/images/albi_children_school_1781884113577.jpg')"
+              backgroundImage: "linear-gradient(to bottom, rgba(10, 15, 25, 0.92) 0%, rgba(10, 15, 25, 0.97) 100%), url('/images/albi_children_school_1781884113577.jpg')"
             }}
             className="bg-cover bg-center border border-zinc-800 rounded-[2.2rem] p-7 md:p-8 shadow-md flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 text-white"
           >

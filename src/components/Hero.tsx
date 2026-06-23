@@ -133,7 +133,7 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           }}
           whileHover={{ y: -6, scale: 1.015, transition: { duration: 0.3 } }}
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(15, 22, 15, 0.82) 0%, rgba(15, 22, 15, 0.9) 100%), url('/src/assets/images/volunteers_park_1781879709971.jpg')"
+            backgroundImage: "linear-gradient(to bottom, rgba(15, 22, 15, 0.82) 0%, rgba(15, 22, 15, 0.9) 100%), url('/images/volunteers_park_1781879709971.jpg')"
           }}
           className="md:col-span-2 bg-cover bg-center rounded-[2rem] min-h-[160px] md:min-h-auto relative overflow-hidden group flex items-center justify-center border border-zinc-850 shadow-md transition-shadow duration-300"
         >
@@ -161,7 +161,7 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           }}
           whileHover={{ y: -6, scale: 1.015, transition: { duration: 0.3 } }}
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(10, 15, 12, 0.91) 0%, rgba(10, 15, 12, 0.96) 100%), url('/src/assets/images/albi_sun_cream_sage_1781884128743.jpg')"
+            backgroundImage: "linear-gradient(to bottom, rgba(10, 15, 12, 0.91) 0%, rgba(10, 15, 12, 0.96) 100%), url('/images/albi_sun_cream_sage_1781884128743.jpg')"
           }}
           className="md:col-span-3 bg-cover bg-center border border-zinc-800 rounded-[2rem] p-7 flex flex-col justify-between gap-6 shadow-md hover:shadow-xl transition-shadow duration-500 text-white"
         >
@@ -198,7 +198,7 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           
           {/* Main Portrait Image */}
           <img
-            src="/src/assets/images/albi_applying_sunscreen_1781884143114.jpg"
+            src="/images/albi_applying_sunscreen_1781884143114.jpg"
             alt="Application bienveillante de crème solaire sur un enfant"
             referrerPolicy="no-referrer"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-750 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -232,7 +232,7 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           }}
           whileHover={{ y: -6, scale: 1.015, transition: { duration: 0.3 } }}
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(120, 135, 100, 0.91) 0%, rgba(120, 135, 100, 0.96) 100%), url('/src/assets/images/albi_prevention_care_1781884154813.jpg')"
+            backgroundImage: "linear-gradient(to bottom, rgba(120, 135, 100, 0.91) 0%, rgba(120, 135, 100, 0.96) 100%), url('/images/albi_prevention_care_1781884154813.jpg')"
           }}
           className="md:col-span-2 bg-cover bg-center rounded-[2rem] p-6 relative overflow-hidden group flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-500 min-h-[280px] md:min-h-auto text-[var(--color-brand-dark)]"
         >
@@ -277,7 +277,7 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           }}
           whileHover={{ y: -6, scale: 1.015, transition: { duration: 0.3 } }}
           style={{
-            backgroundImage: "linear-gradient(to bottom, rgba(15, 22, 15, 0.91) 0%, rgba(15, 22, 15, 0.96) 100%), url('/src/assets/images/albi_children_school_1781884113577.jpg')"
+            backgroundImage: "linear-gradient(to bottom, rgba(15, 22, 15, 0.91) 0%, rgba(15, 22, 15, 0.96) 100%), url('/images/albi_children_school_1781884113577.jpg')"
           }}
           className="md:col-span-2 bg-cover bg-center border border-zinc-800 rounded-[2rem] p-6 flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-500 relative overflow-hidden min-h-[220px] md:min-h-auto text-white"
         >

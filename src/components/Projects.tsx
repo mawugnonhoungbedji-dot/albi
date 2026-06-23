@@ -48,7 +48,7 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           }}
           whileHover={{ y: -8, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
           style={{
-            backgroundImage: "linear-gradient(to right, rgba(10, 15, 10, 0.96) 0%, rgba(10, 15, 10, 0.85) 60%, rgba(10, 15, 10, 0.5) 100%), url('/src/assets/images/albi_prevention_care_1781884154813.jpg')"
+            backgroundImage: "linear-gradient(to right, rgba(10, 15, 10, 0.96) 0%, rgba(10, 15, 10, 0.85) 60%, rgba(10, 15, 10, 0.5) 100%), url('/images/albi_prevention_care_1781884154813.jpg')"
           }}
           className="lg:col-span-6 bg-cover bg-center border border-zinc-800 rounded-[2.2rem] p-8 md:p-10 flex flex-col justify-between shadow-md hover:shadow-xl transition-shadow duration-500 min-h-[320px] text-white group"
         >
@@ -93,7 +93,7 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           
           {/* Background image of school children */}
           <img 
-            src="/src/assets/images/albi_children_school_1781884113577.jpg" 
+            src="/images/albi_children_school_1781884113577.jpg" 
             alt="Enfants à l'école" 
             referrerPolicy="no-referrer"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
@@ -137,7 +137,7 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           
           {/* Background image of sunshine & care */}
           <img 
-            src="/src/assets/images/albi_applying_sunscreen_1781884143114.jpg" 
+            src="/images/albi_applying_sunscreen_1781884143114.jpg" 
             alt="Noël solidaire" 
             referrerPolicy="no-referrer"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"

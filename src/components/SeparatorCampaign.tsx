@@ -18,7 +18,7 @@ export default function SeparatorCampaign() {
         {/* Central circular sunscreen still life mask */}
         <div className="relative w-36 h-36 md:w-56 md:h-56 shrink-0 rounded-full overflow-hidden border-8 border-white shadow-xl hover:scale-105 transition-all duration-300">
           <img
-            src="/src/assets/images/albi_sun_cream_sage_1781884128743.jpg"
+            src="/images/albi_sun_cream_sage_1781884128743.jpg"
             alt="Écran d'albi et chapeau de soleil"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover animate-[spin_50s_linear_infinite]"
