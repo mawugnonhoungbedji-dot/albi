@@ -4,10 +4,9 @@ import { motion } from "motion/react";
 interface HeroProps {
   onLearnMoreClick: () => void;
   onShareClick: () => void;
-  onDonateClick: () => void;
 }
 
-export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: HeroProps) {
+export default function Hero({ onLearnMoreClick, onShareClick }: HeroProps) {
   return (
     <section className="relative px-4 md:px-8 pt-8 pb-16 overflow-hidden max-w-7xl mx-auto">
       
@@ -61,21 +60,17 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           transition={{ type: "spring", stiffness: 70, damping: 14 }}
           className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight lg:tracking-tighter text-[var(--color-brand-dark)] max-w-4xl mx-auto leading-[1.1] md:leading-[1.12]"
         >
-          Agissons pour les{" "}
+          Agissons pour les droits{" "}
           <motion.span 
             initial={{ scale: 0.9, rotate: -2 }}
             animate={{ scale: 1, rotate: -1 }}
             transition={{ type: "spring", stiffness: 100, damping: 12, delay: 0.1 }}
             className="inline-block relative px-5 py-0.5 bg-[var(--color-brand-olive-pale)] text-[var(--color-brand-dark)] border border-[var(--color-brand-olive)] rounded-full shadow-sm"
           >
-            droits
+            et la dignité
           </motion.span>{" "}
-          et <br />
-          la{" "}
-          <span className="relative inline-block z-10 before:absolute before:bottom-1 before:left-0 before:right-0 before:h-4 before:bg-[var(--color-brand-olive-light)] before:-z-10 before:rounded-sm">
-            dignité
-          </span>{" "}
-          des albinos
+          <br />
+          des albinos au Bénin
         </motion.h1>
 
         {/* Sub-header / Row info */}
@@ -88,7 +83,7 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
           
           <div className="max-w-md">
             <p className="text-stone-650 text-sm md:text-base leading-relaxed font-medium">
-              Albi International œuvre pour la protection et l'épanouissement des personnes atteintes d'albinisme au Bénin. Ensemble, luttons contre l'exclusion et le cancer de la peau.
+              Albi International défend les droits des personnes atteintes d'albinisme au Bénin. Chaque année, grâce à vos dons, nous distribuons des kits de protection solaire SPF 50+ et des fournitures scolaires adaptées à des enfants albinos vulnérables à Cotonou et Porto-Novo. Ensemble, luttons contre l'exclusion et le cancer de la peau — une vie sauvable à la fois.
             </p>
           </div>
 
@@ -260,15 +255,17 @@ export default function Hero({ onLearnMoreClick, onShareClick, onDonateClick }: 
 
           {/* Text and trigger */}
           <div className="z-10 mt-8">
-            <button
-              onClick={onDonateClick}
-              className="text-left group/btn cursor-pointer"
+            <a
+              href="https://wa.me/22997494591?text=Bonjour%20Albi%20International%20!%20Je%20souhaite%20soutenir%20l'association%20et%20faire%20un%20don%20pour%20les%20enfants%20atteints%20d'albinisme%20au%20B%C3%A9nin."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-left group/btn cursor-pointer block no-underline"
             >
               <h3 className="font-display font-black text-base lg:text-lg text-[var(--color-brand-dark)] leading-tight hover:underline flex items-baseline gap-1">
                 Faire un don <br />et protéger des vies
                 <ArrowUpRight className="inline-block w-4 h-4 text-[var(--color-brand-dark)] group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </h3>
-            </button>
+            </a>
           </div>
         </motion.div>
 

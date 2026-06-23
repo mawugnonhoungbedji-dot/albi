@@ -51,6 +51,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
     setModalType(type);
   };
 
+
   const closeModal = () => {
     setModalType(null);
     setSelectedProject(null);
@@ -89,7 +90,6 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                   <Hero
                     onLearnMoreClick={() => changePage("projects")}
                     onShareClick={() => openModal("share")}
-                    onDonateClick={() => openModal("donate")}
                   />
 
                   {/* SECTION 2: Scrolling Banner & Stats ticker */}
@@ -198,13 +198,15 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                           Découvrir Notre Histoire
                           <ArrowRight className="w-4 h-4" />
                         </button>
-                        <button 
-                          onClick={() => openModal("donate")}
-                          className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-black text-xs uppercase tracking-wider px-6.5 py-4 rounded-full transition-transform active:scale-95 cursor-pointer flex items-center gap-2"
+                        <a 
+                          href="https://wa.me/22997494591?text=Bonjour%20Albi%20International%20!%20Je%20souhaite%20soutenir%20la%20cause%20directe%20d'Albi%20International%20au%20B%C3%A9nin."
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-black text-xs uppercase tracking-wider px-6.5 py-4 rounded-full transition-transform active:scale-95 cursor-pointer flex items-center gap-2 no-underline"
                         >
                           Soutenir la Cause Directe
                           <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </section>
@@ -659,24 +661,125 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                     </div>
                   </section>
 
-                  {/* SECTION 6: Engagement Citoyen / Télécharger Guide d'inclusion (Document list with direct download trigger) */}
+                  {/* SECTION 6: Articles de Blog / Actualités (Replaces Ressource Gratuite) */}
                   <section className="max-w-7xl mx-auto px-4 md:px-8 pb-16">
-                    <div className="bg-[var(--color-brand-dark)] text-white rounded-[2.5rem] p-8 md:p-14 text-center space-y-6 relative overflow-hidden">
-                      <div className="max-w-xl mx-auto space-y-4 relative z-10">
-                        <span className="text-[10px] font-black uppercase tracking-widest text-[var(--color-brand-olive-light)]">Ressource Gratuite</span>
-                        <h2 className="font-display font-black text-2xl md:text-3xl text-white tracking-tight">Le Guide Pratique de l'Enseignant Béninois</h2>
-                        <p className="text-zinc-350 text-xs leading-relaxed font-normal md:font-medium">
-                          Téléchargez notre brochure d'information scolaire agréée pour comprendre comment optimiser l'apprentissage et le placement spatial des élèves albinos en classe à faible ombre.
-                        </p>
-                        <div className="pt-3">
+                    <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                      <span className="text-[10px] font-black uppercase text-[var(--color-brand-olive-dense)] tracking-widest bg-[var(--color-brand-olive-pale)] px-3.5 py-1.5 rounded-full border border-[var(--color-brand-olive)]/20">
+                        Notre Blog & Actualités
+                      </span>
+                      <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-[var(--color-brand-dark)] tracking-tight">
+                        Dernières publications de l'ONG
+                      </h2>
+                      <p className="text-zinc-600 text-xs sm:text-sm font-semibold max-w-xl mx-auto leading-relaxed">
+                        Suivez nos actions sur le terrain, nos décryptages scientifiques et nos actualités de solidarité au Bénin.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      {/* Blog Post 1 */}
+                      <div className="bg-white border border-zinc-200/80 rounded-[2rem] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                          <div className="aspect-[16/10] overflow-hidden relative bg-zinc-150">
+                            <img 
+                              src="/images/albi_sun_cream_sage_1781884128743.webp" 
+                              alt="Distribution de crème solaire au Bénin" 
+                              className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                            />
+                            <div className="absolute top-4 left-4 bg-amber-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-xs">
+                              Santé & Prévention
+                            </div>
+                          </div>
+                          <div className="p-6 space-y-3">
+                            <div className="text-[10px] text-zinc-400 font-bold">12 JUIN 2026</div>
+                            <h3 className="font-display font-black text-base text-[var(--color-brand-dark)] group-hover:text-[var(--color-brand-olive)] transition-colors leading-snug">
+                              Protéger la peau : la distribution vitale de crème solaire SPF 50+
+                            </h3>
+                            <p className="text-zinc-600 text-xs leading-relaxed line-clamp-3 font-medium">
+                              Nos caravanes médicales parcourent les départements du Bénin pour distribuer des écrans solaires dermatologiques de haute protection et dépister les lésions précoces.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="p-6 pt-0">
                           <a 
-                            href="https://wa.me/22997494591?text=Bonjour%20AlbiInternational%2C%20je%20souhaite%20recevoir%20le%20Guide%20Pratique%20de%20l%27Enseignant%20B%C3%A9ninois."
+                            href="/blog/creme-solaire"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 bg-[var(--color-brand-olive)] hover:bg-[var(--color-brand-olive-dense)] text-white text-xs font-black uppercase tracking-wider py-4 px-8 rounded-full transition-colors cursor-pointer"
+                            className="inline-flex items-center gap-1 text-xs font-extrabold text-[var(--color-brand-olive)] group-hover:text-[var(--color-brand-olive-dense)] uppercase tracking-wider transition-colors cursor-pointer"
                           >
-                            <span>Obtenir mon PDF par WhatsApp</span>
-                            <ArrowUpRight className="w-4 h-4 text-white" />
+                            <span>Lire l'article</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Blog Post 2 */}
+                      <div className="bg-white border border-zinc-200/80 rounded-[2rem] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                          <div className="aspect-[16/10] overflow-hidden relative bg-zinc-150">
+                            <img 
+                              src="/images/albi_children_school_1781884113577.webp" 
+                              alt="Enfants albinos à l'école" 
+                              className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                            />
+                            <div className="absolute top-4 left-4 bg-indigo-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-xs">
+                              Inclusion Éducative
+                            </div>
+                          </div>
+                          <div className="p-6 space-y-3">
+                            <div className="text-[10px] text-zinc-400 font-bold">5 SEPTEMBRE 2025</div>
+                            <h3 className="font-display font-black text-base text-[var(--color-brand-dark)] group-hover:text-[var(--color-brand-olive)] transition-colors leading-snug">
+                              L'inclusion scolaire : des kits adaptés pour les écoliers albinos
+                            </h3>
+                            <p className="text-zinc-600 text-xs leading-relaxed line-clamp-3 font-medium">
+                              Découvrez notre programme annuel de rentrée solidaire. Des loupes de lecture, des manuels imprimés en gros caractères et des lunettes de protection pour offrir les mêmes chances.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="p-6 pt-0">
+                          <a 
+                            href="/blog/kits-scolaires"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-extrabold text-[var(--color-brand-olive)] group-hover:text-[var(--color-brand-olive-dense)] uppercase tracking-wider transition-colors cursor-pointer"
+                          >
+                            <span>Lire l'article</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Blog Post 3 */}
+                      <div className="bg-white border border-zinc-200/80 rounded-[2rem] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                          <div className="aspect-[16/10] overflow-hidden relative bg-zinc-150">
+                            <img 
+                              src="/images/albi_prevention_care_1781884154813.webp" 
+                              alt="Sensibilisation albinisme Bénin" 
+                              className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                            />
+                            <div className="absolute top-4 left-4 bg-emerald-500 text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-xs">
+                              Sciences & Société
+                            </div>
+                          </div>
+                          <div className="p-6 space-y-3">
+                            <div className="text-[10px] text-zinc-400 font-bold">20 JANVIER 2026</div>
+                            <h3 className="font-display font-black text-base text-[var(--color-brand-dark)] group-hover:text-[var(--color-brand-olive)] transition-colors leading-snug">
+                              Démystifier l'albinisme : détruire les croyances par la science
+                            </h3>
+                            <p className="text-zinc-600 text-xs leading-relaxed line-clamp-3 font-medium">
+                              Focus sur nos campagnes intensives de sensibilisation dans les zones rurales. Nous expliquons cliniquement la génétique de l'albinisme pour effacer les fausses superstitions.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="p-6 pt-0">
+                          <a 
+                            href="/blog/demystifier-albinisme"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-extrabold text-[var(--color-brand-olive)] group-hover:text-[var(--color-brand-olive-dense)] uppercase tracking-wider transition-colors cursor-pointer"
+                          >
+                            <span>Lire l'article</span>
+                            <ArrowUpRight className="w-3.5 h-3.5" />
                           </a>
                         </div>
                       </div>
@@ -708,7 +811,6 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
 
                   {/* Get involved accordion interactives and Donation lists */}
                   <GetInvolved
-                    onDonateClick={() => openModal("donate")}
                     onVolunteerClick={() => openModal("contact")}
                     onShareClick={() => openModal("share")}
                   />

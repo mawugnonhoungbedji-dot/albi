@@ -53,7 +53,7 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       tag: "RÉSILIENCE",
       title: "L'Histoire de Carine",
       description: "Comment une histoire familiale intime a enfanté un mouvement médical et d'inclusion souverain.",
-      image: "/images/albi_sun_cream_sage_1781884128743.webp",
+      image: "/images/Fondatrice.webp",
       category: "Histoire",
       icon: <BookOpen className="w-5 h-5 text-emerald-700" />,
       tagColor: "bg-emerald-100/90 text-emerald-900 border-emerald-200"

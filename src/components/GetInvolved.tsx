@@ -12,12 +12,11 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 
 interface GetInvolvedProps {
-  onDonateClick: () => void;
   onVolunteerClick: () => void;
   onShareClick: () => void;
 }
 
-export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareClick }: GetInvolvedProps) {
+export default function GetInvolved({ onVolunteerClick, onShareClick }: GetInvolvedProps) {
   // state for FAQ Accordion
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   
@@ -107,47 +106,6 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
     }
   ];
 
-  const pricingPackages = [
-    {
-      name: "Kit Essentiel Prévention",
-      price: "15€",
-      desc: "Protège un enfant albinos",
-      features: [
-        "1 flacon de crème SPF 50+ (protection 2 mois)",
-        "1 casquette de protection thermique",
-        "Suivi médical de base par notre coordinateur",
-        "Lettre numérique de remerciement"
-      ],
-      whatsappMsg: "Bonjour AlbiInternational ! Je souhaite financer le Kit Essentiel Prévention à 15€ pour protéger un enfant albinos au Bénin."
-    },
-    {
-      name: "Parrainage Scolaire Complet",
-      price: "45€",
-      desc: "La formule d'impact recommandée",
-      isPopular: true,
-      features: [
-        "Dotation annuelle en crèmes solaires SPF 50+",
-        "1 paire de lunettes solaires UV certifiées",
-        "1 chapeau à larges bords et 1 sac d'école",
-        "Dotation de loupes de lecture & cahiers adaptés",
-        "Rapport de progression scolaire de l'élève parrainé"
-      ],
-      whatsappMsg: "Bonjour AlbiInternational ! Je désire souscrire au Parrainage Scolaire Complet à 45€ pour assurer la scolarité protégée d'un enfant."
-    },
-    {
-      name: "Soutien Médical & Clinique",
-      price: "120€",
-      desc: "Prise en charge spécialisée avancée",
-      features: [
-        "Consultation dermatologique d'urgence pour 3 enfants",
-        "Dépistage précoce des kératoses actiniques",
-        "Fourniture de soins hydratants réparateurs",
-        "Traitement oculaire spécialisé chez notre ophtalmologue",
-        "Bilan personnalisé de santé semestriel envoyé par l'ONG"
-      ],
-      whatsappMsg: "Bonjour AlbiInternational ! Je souhaite soutenir la cause à hauteur de 120€ avec la formule Soutien Médical & Clinique."
-    }
-  ];
 
   const faqs = [
     {
@@ -164,7 +122,7 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
     },
     {
       q: "Puis-je parrainer un enfant ou une école sur le long terme ?",
-      a: "Absolument. En choisissant la formule de parrainage à 45€ ou en nous contactant, vous pouvez établir un suivi régulier d'un élève précis, recevoir ses notes d'école et des communiqués personnels sur son état de santé."
+      a: "Absolument. En nous contactant directement sur WhatsApp, vous pouvez établir un suivi régulier d'un élève précis, recevoir ses notes d'école et des communiqués personnels sur son état de santé."
     }
   ];
 
@@ -206,13 +164,15 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4"
           >
-            <button
-              onClick={onDonateClick}
-              className="w-full sm:w-auto bg-[var(--color-brand-olive)] hover:bg-[var(--color-brand-olive-dense)] text-white hover:text-white font-extrabold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-lg shadow-orange-100 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 cursor-pointer pt-4.5 pb-4.5"
+            <a
+              href="https://wa.me/22997494591?text=Bonjour%20Albi%20International%20!%20Je%20souhaite%20soutenir%20l'association%20et%20faire%20un%20don%20pour%20les%20enfants%20atteints%20d'albinisme%20au%20B%C3%A9nin."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-[var(--color-brand-olive)] hover:bg-[var(--color-brand-olive-dense)] text-white hover:text-white font-extrabold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-lg shadow-orange-100 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 cursor-pointer pt-4.5 pb-4.5 no-underline"
             >
               Faire un don direct
               <Heart className="w-4 h-4 fill-current text-white/90 animate-pulse" />
-            </button>
+            </a>
             <button
               onClick={onVolunteerClick}
               className="w-full sm:w-auto bg-white hover:bg-[var(--color-brand-olive-pale)] border border-zinc-200 text-[var(--color-brand-dark)] font-extrabold text-sm uppercase tracking-wider px-8 py-4 rounded-full shadow-sm transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] flex items-center justify-center gap-2 cursor-pointer pt-4.5 pb-4.5 animate-fade-in"
@@ -492,97 +452,6 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
         </div>
       </section>
 
-      {/* SECTION 5: FORFAITS D’IMPACT CONCRETS (Pricing Tiers / Donation Packages) */}
-      <section className="px-4 md:px-8 py-16 md:py-24 bg-white/70 border-t border-b border-zinc-200/40">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-[10px] font-black uppercase text-[var(--color-brand-olive)] tracking-widest">
-              Impact financier mesuré
-            </span>
-            <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-[var(--color-brand-dark)] mt-1 tracking-tight">
-              Forfaits d'impact de secours Albi
-            </h2>
-            <p className="text-[var(--color-brand-text-muted)] text-xs sm:text-sm font-normal md:font-medium max-w-md mx-auto leading-relaxed">
-              Choisissez la formule matérielle concrète que vous souhaitez voir acheminée et distribuée nominativement.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-            {pricingPackages.map((pkg, idx) => {
-              const bgImages = [
-                "/images/albi_sun_cream_sage_1781884128743.webp",
-                "/images/albi_children_school_1781884113577.webp",
-                "/images/albi_prevention_care_1781884154813.webp"
-              ];
-              const bgGradients = [
-                "linear-gradient(to bottom, rgba(12, 18, 12, 0.94) 0%, rgba(12, 18, 12, 0.97) 100%)",
-                "linear-gradient(to bottom, rgba(10, 15, 20, 0.93) 0%, rgba(10, 15, 20, 0.97) 100%)",
-                "linear-gradient(to bottom, rgba(18, 12, 10, 0.94) 0%, rgba(18, 12, 10, 0.97) 100%)"
-              ];
-              return (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundImage: `${bgGradients[idx % 3]}, url('${bgImages[idx % 3]}')`
-                  }}
-                  className={`bg-cover bg-center rounded-3.5xl border p-8 flex flex-col justify-between transition-all duration-300 min-h-[460px] relative text-white ${
-                    pkg.isPopular 
-                      ? "border-[var(--color-brand-olive)] shadow-lg hover:shadow-xl hover:shadow-orange-100/30" 
-                      : "border-zinc-800 shadow-md hover:shadow-lg"
-                  }`}
-                >
-                  {pkg.isPopular && (
-                    <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-[var(--color-brand-olive)] text-white text-[9px] font-black uppercase tracking-widest px-4 py-1 rounded-full border border-orange-200 font-display">
-                      PROJET RECOMMANDÉ
-                    </div>
-                  )}
-
-                  <div className="space-y-5">
-                    <div>
-                      <h3 className="font-display font-black text-base uppercase tracking-wider text-white">
-                        {pkg.name}
-                      </h3>
-                      <p className="text-zinc-350 text-xs mt-1 font-normal">{pkg.desc}</p>
-                    </div>
-
-                    <div className="flex items-baseline gap-1.5 pt-1 border-b border-zinc-800 pb-4">
-                      <span className="font-display font-black text-4xl sm:text-5xl text-white">
-                        {pkg.price}
-                      </span>
-                      <span className="text-zinc-400 text-xs font-semibold">/ parrainage ponctuel</span>
-                    </div>
-
-                    <ul className="space-y-3 pt-2">
-                      {pkg.features.map((feature, fIdx) => (
-                        <li key={fIdx} className="flex gap-2.5 items-start text-xs text-zinc-200 font-normal leading-relaxed">
-                          <Check className="w-4 h-4 text-[var(--color-brand-olive-light)] shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="pt-8">
-                    <a
-                      href={getWhatsAppLink(pkg.whatsappMsg)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`w-full font-black text-xs uppercase tracking-wider py-4 px-5 rounded-2xl flex items-center justify-between transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] ${
-                        pkg.isPopular
-                          ? "bg-[var(--color-brand-olive)] text-white hover:bg-[var(--color-brand-olive-dense)] shadow-md"
-                          : "bg-[var(--color-brand-dark)] text-white hover:bg-black border border-zinc-800"
-                      }`}
-                    >
-                      <span>Soutenir ce forfait</span>
-                      <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 6: FAQ ACCORDION & SERMENT D’IMPACT (FAQ Combined with final global CTA block) */}
       <section className="px-4 md:px-8 py-16 md:py-24 max-w-4xl mx-auto space-y-14">
@@ -653,12 +522,14 @@ export default function GetInvolved({ onDonateClick, onVolunteerClick, onShareCl
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-2">
-              <button
-                onClick={onDonateClick}
-                className="w-full sm:w-auto bg-[var(--color-brand-olive-light)] hover:bg-white text-[var(--color-brand-dark)] font-extrabold text-xs uppercase tracking-wider py-4 px-8 rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer"
+              <a
+                href="https://wa.me/22997494591?text=Bonjour%20Albi%20International%20!%20Je%20souhaite%20participer%20financi%C3%A8rement%20et%20faire%20un%20don%20pour%20les%20enfants%20atteints%20d'albinisme%20au%20B%C3%A9nin."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto bg-[var(--color-brand-olive-light)] hover:bg-white text-[var(--color-brand-dark)] font-extrabold text-xs uppercase tracking-wider py-4 px-8 rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer no-underline text-center flex items-center justify-center"
               >
                 Participer financièrement
-              </button>
+              </a>
               <a
                 href={getWhatsAppLink("Bonjour AlbiInternational ! Je souhaite vous contacter pour proposer nos services / faire un don matériel depuis la page de soutien de votre site web.")}
                 target="_blank"

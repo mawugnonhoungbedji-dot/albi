@@ -9,9 +9,159 @@ interface Props {
 
 const { 
   title, 
-  description = "Association Albi International au Bénin : lutte contre l'exclusion sociale, distribution de crèmes solaires SPF 50+ et de kits scolaires adaptés pour les personnes atteintes d'albinisme.",
+  description = "Soutenez Albi International, l'ONG beninoise qui defend les droits des enfants albinos au Benin. Cremes solaires SPF 50+, kits scolaires adaptes et inclusion sociale.",
   pageUrl = "https://albi-international-benin.org"
 } = Astro.props;
+
+const jsonLdNgo = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "@id": "https://albi-international-benin.org/#organization",
+  "name": "Albi International Benin",
+  "alternateName": "Albi International",
+  "description": "ONG beninoise fondee en 2017 par Carine HOUNGUE, elle-meme atteinte d'albinisme, pour defendre les droits des personnes albinos au Benin : distribution de cremes solaires SPF 50+, kits scolaires adaptes, lutte contre les mutilations rituelles et l'exclusion sociale.",
+  "url": "https://albi-international-benin.org",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://albi-international-benin.org/images/Logo.webp",
+    "width": 400,
+    "height": 400
+  },
+  "image": "https://albi-international-benin.org/images/og-share.webp",
+  "foundingDate": "2017-06",
+  "founder": {
+    "@type": "Person",
+    "name": "Carine HOUNGUE",
+    "jobTitle": "Fondatrice & Directrice Generale",
+    "description": "Atteinte d'albinisme depuis sa naissance, Carine HOUNGUE a cree Albi International en juin 2017 apres le deces de sa soeur d'un melanome evitable. Defenseure des droits des albinos en Afrique de l'Ouest.",
+    "nationality": "Beninoise"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cotonou",
+    "addressRegion": "Littoral",
+    "addressCountry": "BJ"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Benin" },
+    { "@type": "AdministrativeArea", "name": "Afrique de l'Ouest" }
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+229-97-49-45-91",
+    "contactType": "customer service",
+    "availableLanguage": ["French"]
+  },
+  "sameAs": [
+    "https://wa.me/22997494591"
+  ],
+  "knowsAbout": [
+    "Albinisme",
+    "Droits des personnes atteintes d'albinisme",
+    "Protection solaire SPF 50+",
+    "Inclusion educative au Benin",
+    "Lutte contre les mutilations rituelles en Afrique"
+  ]
+});
+
+const jsonLdFaq = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que l'albinisme et quels sont ses risques en Afrique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'albinisme est une condition genetique hereditaire caracterisee par l'absence ou la tres faible production de melanine. En Afrique subsaharienne, sans protection solaire SPF 50+, les personnes atteintes developpent frequemment des melanomes agressifs des l'adolescence. L'albinisme n'est ni contagieux, ni mystique, ni lie a une malediction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle creme solaire est recommandee pour les enfants albinos en Afrique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Albi International preconise exclusivement des ecrans mineraux ou filtres chimiques d'indice SPF 50+ minimum, sans parfum ni alcool, adaptes a la peau pediatrique. Ces protections doivent etre reappliquees toutes les 2 heures lors des expositions au soleil equatorial beninois."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment parrainer un enfant atteint d'albinisme au Benin ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le parrainage a 45 euros finance integralement le kit annuel d'un ecolier albinos : cremes solaires SPF 50+, lunettes UV certifiees, loupe de lecture ergonomique, chapeau a larges bords et cahiers a gros caracteres. Le parrain recoit chaque trimestre un rapport personnalise avec les notes scolaires et l'etat de sante de l'enfant suivi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment m'assurer que mon don arrive bien aux enfants au Benin ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Albi International pratique une transparence absolue : chaque trimestre, un rapport logistique complet avec photos nominatives de distribution est transmis aux donateurs. 100% des dons sont affectes a l'achat et a l'acheminement des lots au Benin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'albinisme est-il lie a des croyances rituelles en Afrique ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. L'albinisme est une condition genetique hereditaire d'origine purement clinique. Pourtant, dans certaines communautes d'Afrique subsaharienne, des superstitions attribuent des pouvoirs magiques aux membres des personnes albinos, motivant des violences rituelles documentees par l'ONU. Albi International combat ces mythes par l'education scientifique."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que la Journee Internationale de Sensibilisation a l'Albinisme (JISA) ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La JISA est celebree chaque 13 juin depuis la resolution A/RES/69/170 de l'Assemblee Generale des Nations Unies (2014). Au Benin, Albi International en fait son evenement phare annuel : distribution gratuite de cremes solaires SPF 50+ et campagnes de sensibilisation scolaires."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quels problemes visuels touchent les personnes atteintes d'albinisme ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'albinisme entraine structurellement un nystagmus (mouvements oculaires involontaires), un strabisme prononce et une acuite visuelle tres reduite. Sans materiel adapte (loupes de lecture, lunettes filtrantes UV, cahiers a gros caracteres), les enfants albinos sont prives de leur droit a l'education."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Y a-t-il des frais preleves sur mes dons a Albi International ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aucun intermediaire. 100% des dons materiels ou financiers sont affectes directement a l'achat et a la logistique d'acheminement des kits au Benin, sous la supervision de nos coordinateurs terrain."
+      }
+    }
+  ]
+});
+
+const jsonLdEvent = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Journee Internationale de Sensibilisation a l'Albinisme (JISA) - Benin 2026",
+  "description": "Evenement annuel d'Albi International au Benin : distribution gratuite de cremes solaires SPF 50+ aux familles vulnerables, campagnes de sensibilisation scolaire et plaidoyer pour les droits des personnes atteintes d'albinisme. Resolution ONU A/RES/69/170.",
+  "startDate": "2026-06-13",
+  "endDate": "2026-06-13",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Cotonou & Porto-Novo, Benin",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cotonou",
+      "addressCountry": "BJ"
+    }
+  },
+  "organizer": {
+    "@type": "NGO",
+    "@id": "https://albi-international-benin.org/#organization",
+    "name": "Albi International Benin",
+    "url": "https://albi-international-benin.org"
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": "fr"
+});
 ---
 
 <!doctype html>
@@ -21,94 +171,33 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/webp" href="/images/Logo.webp" />
     
-    <title>{title} - Albi International Bénin</title>
-    
-    <!-- Meta Tags pour le SEO Technique -->
+    <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Albi International, albinisme, Bénin, albinos, Cotonou, Porto-Novo, crème solaire albinos, kit scolaire albinisme, Carine Houngue, inclusion sociale" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <link rel="canonical" href={pageUrl} />
     
-    <!-- Balises Open Graph (OG) pour le partage (WhatsApp, Facebook, LinkedIn) -->
-    <meta property="og:title" content={`${title} - Albi International Bénin`} />
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/Logo.webp" />
+    <meta property="og:image" content="https://albi-international-benin.org/images/og-share.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Albi International - Defendre les droits des albinos au Benin" />
     <meta property="og:url" content={pageUrl} />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Albi International Benin" />
     
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${title} - Albi International Bénin`} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/images/Logo.webp" />
+    <meta name="twitter:image" content="https://albi-international-benin.org/images/og-share.webp" />
 
-    <!-- Données Structurées JSON-LD (AEO & GEO) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "NGO",
-        "name": "Albi International Bénin",
-        "alternativeName": "Albi International",
-        "description": "Plateforme solidaire pour l'association Albi International au Bénin. Notre combat vise à offrir une protection cutanée adéquate, un accès durable à l'éducation inclusive et la pleine réhabilitation sociale pour chaque personne atteinte d'albinisme.",
-        "url": "https://albi-international-benin.org",
-        "logo": "https://albi-international-benin.org/images/Logo.webp",
-        "foundingDate": "2017-06",
-        "founder": {
-          "@type": "Person",
-          "name": "Carine HOUNGUE"
-        },
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Cotonou",
-          "addressCountry": "BJ"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+229-97-49-45-91",
-          "contactType": "customer service"
-        }
-      }
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Comment puis-je m'assurer que mon don arrive bien aux enfants au Bénin ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Nous prônons une politique de transparence absolue. Chaque trimestre, un rapport logistique agrémenté de photos de distribution ciblée par élève est partagé avec nos donateurs. Notre ONG locale est officiellement enregistrée et soumise à des contrôles stricts."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Les crèmes solaires de l'ONG sont-elles spécifiques ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Oui. Les rayons du soleil tropical nécessitent l'application exclusive d'écrans minéraux ou de filtres de haute protection indice de protection SPF 50+ minimum, sans parfum ni alcool, adaptés à la fragilité de la structure épidermique des personnes atteintes d'albinisme."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Y a-t-il des frais retenus sur l'envoi de mes dons ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Aucun intermédiaire gourmand. 100% des dons matériels ou financiers récoltés sont affectés directement à l'achat et à la logistique d'acheminement des lots au Bénin, sous la garde attentive de nos coordinateurs."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Puis-je parrainer un enfant ou une école sur le long terme ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolument. En choisissant la formule de parrainage à 45€ ou en nous contactant, vous pouvez établir un suivi régulier d'un élève précis, recevoir ses notes d'école et des communiqués personnels sur son état de santé."
-            }
-          }
-        ]
-      }
-    </script>
+    <!-- JSON-LD : NGO + FAQPage + Event (injected via frontmatter to avoid encoding issues) -->
+    <script type="application/ld+json" set:html={jsonLdNgo} />
+    <script type="application/ld+json" set:html={jsonLdFaq} />
+    <script type="application/ld+json" set:html={jsonLdEvent} />
   </head>
   <body>
     <slot />

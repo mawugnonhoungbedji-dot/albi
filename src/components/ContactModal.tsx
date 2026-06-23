@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { X, Send, Heart, Trees, Share2, Sparkles, Check, ChevronRight } from "lucide-react";
+import { X, Send, Heart, Trees, Share2, Sparkles, Check } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { ProjectItem } from "../data";
 
-export type ModalType = "contact" | "share" | "donate" | "project_detail" | null;
+export type ModalType = "contact" | "share" | "project_detail" | null;
 
 interface ContactModalProps {
   type: ModalType;
@@ -19,12 +19,6 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
   // Share States
   const [shareForm, setShareForm] = useState({ username: "", location: "", action: "", message: "", imageSeed: "eco-trail" });
   const [shareSuccess, setShareSuccess] = useState(false);
-
-  // Donate States
-  const [donationAmount, setDonationAmount] = useState<string>("50");
-  const [customAmount, setCustomAmount] = useState("");
-  const [paymentDone, setPaymentDone] = useState(false);
-  const [paymentForm, setPaymentForm] = useState({ fullName: "", email: "", card: "", expiry: "", cvc: "" });
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,20 +39,6 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
       onClose();
     }, 3200);
   };
-
-  const handleDonateSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setPaymentDone(true);
-    setTimeout(() => {
-      setPaymentDone(false);
-      setDonationAmount("50");
-      setCustomAmount("");
-      setPaymentForm({ fullName: "", email: "", card: "", expiry: "", cvc: "" });
-      onClose();
-    }, 3500);
-  };
-
-  const activeAmount = customAmount || donationAmount;
 
   if (!type) return null;
 
@@ -86,13 +66,11 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
             <div className="w-8 h-8 rounded-lg bg-[var(--color-brand-olive)] text-[var(--color-brand-dark)] flex items-center justify-center">
               {type === "contact" && <Send className="w-4 h-4 text-[var(--color-brand-dark)]" />}
               {type === "share" && <Share2 className="w-4 h-4 text-[var(--color-brand-dark)]" />}
-              {type === "donate" && <Heart className="w-4 h-4 text-[var(--color-brand-dark)]" />}
               {type === "project_detail" && <Trees className="w-4 h-4 text-[var(--color-brand-dark)]" />}
             </div>
             <h3 className="font-display font-extrabold tracking-tight text-sm.5 md:text-base">
               {type === "contact" && "Contacter Albi International"}
               {type === "share" && "Partager mon témoignage"}
-              {type === "donate" && "Soutenir la cause Albi au Bénin"}
               {type === "project_detail" && selectedProject?.title}
             </h3>
           </div>
@@ -266,141 +244,7 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
               </div>
             )}
 
-            {/* 3. DONATE FORM */}
-            {type === "donate" && (
-              <div>
-                {paymentDone ? (
-                  <motion.div initial={{ scale: 0.9 }} animate={{ scale: 1 }} className="py-8 text-center">
-                    <div className="w-14 h-14 rounded-full bg-[var(--color-brand-olive-pale)] flex items-center justify-center mx-auto mb-4 text-[var(--color-brand-olive-dense)]">
-                      <Heart className="w-6 h-6 fill-current" />
-                    </div>
-                    <span className="font-display font-black text-xl text-[var(--color-brand-dark)]">Don Enregistré !</span>
-                    <p className="text-[var(--color-brand-olive-dense)] font-black text-2xl mt-2">${activeAmount}.00 USD</p>
-                    <p className="text-zinc-700 text-[11px] mt-2.5 max-w-xs mx-auto leading-relaxed font-semibold">
-                      Un immense merci pour votre humanisme. Votre don va financer l'achat et la distribution gratuite de crèmes haute protection SPF 50+, lunettes de soleil et chapeaux à larges bords pour les orphelinats et écoles au Bénin.
-                    </p>
-                  </motion.div>
-                ) : (
-                  <form onSubmit={handleDonateSubmit} className="space-y-4">
-                    
-                    {/* Amount selectors */}
-                    <div>
-                      <label className="block text-[11px] font-extrabold uppercase text-[var(--color-brand-text-muted)] tracking-wider mb-2 font-sans">Sélectionner le montant (USD)</label>
-                      <div className="grid grid-cols-4 gap-2">
-                        {["15", "50", "100", "250"].map((amt) => {
-                          const active = donationAmount === amt && !customAmount;
-                          return (
-                            <button
-                              key={amt}
-                              type="button"
-                              onClick={() => {
-                                setDonationAmount(amt);
-                                setCustomAmount("");
-                              }}
-                              className={`py-3 rounded-xl text-xs font-black transition-all ${
-                                active
-                                  ? "bg-[var(--color-brand-dark)] text-white shadow-md scale-103"
-                                  : "bg-white border border-zinc-200 text-[var(--color-brand-dark)] hover:bg-zinc-100"
-                              }`}
-                            >
-                              ${amt}
-                            </button>
-                          );
-                        })}
-                      </div>
-
-                      <div className="mt-2 text-center">
-                        <span className="text-[10px] text-[var(--color-brand-text-muted)] font-semibold">- ou entrez un montant libre (USD) -</span>
-                      </div>
-
-                      <input
-                        type="number"
-                        placeholder="50"
-                        value={customAmount}
-                        onChange={(e) => setCustomAmount(e.target.value)}
-                        className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-2.5 text-xs text-[var(--color-brand-dark)] mt-2 focus:border-[var(--color-brand-olive-dense)] outline-none transition-colors font-black"
-                      />
-                    </div>
-
-                    <div className="h-[1px] bg-zinc-200/50" />
-
-                    {/* Payment Inputs */}
-                    <div className="grid grid-cols-2 gap-3.5">
-                      <div className="col-span-2">
-                        <label className="block text-[11px] font-extrabold uppercase text-[var(--color-brand-text-muted)] tracking-wider mb-1 font-sans">Nom Complet du donateur</label>
-                        <input
-                          required
-                          type="text"
-                          placeholder="Votre nom ou entreprise"
-                          value={paymentForm.fullName}
-                          onChange={(e) => setPaymentForm({ ...paymentForm, fullName: e.target.value })}
-                          className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs text-[var(--color-brand-dark)] focus:border-[var(--color-brand-olive-dense)] outline-none"
-                        />
-                      </div>
-
-                      <div className="col-span-2">
-                        <label className="block text-[11px] font-extrabold uppercase text-[var(--color-brand-text-muted)] tracking-wider mb-1 font-sans">Email pour confirmation</label>
-                        <input
-                          required
-                          type="email"
-                          placeholder="don@albi-benin.org"
-                          value={paymentForm.email}
-                          onChange={(e) => setPaymentForm({ ...paymentForm, email: e.target.value })}
-                          className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs text-[var(--color-brand-dark)] focus:border-[var(--color-brand-olive-dense)] outline-none"
-                        />
-                      </div>
-
-                      <div className="col-span-2">
-                        <label className="block text-[11px] font-extrabold uppercase text-[var(--color-brand-text-muted)] tracking-wider mb-1 font-sans">Chiffres de carte bancaire (Simulation sécurisée)</label>
-                        <input
-                          required
-                          type="text"
-                          placeholder="4000 1234 5678 9010"
-                          value={paymentForm.card}
-                          onChange={(e) => setPaymentForm({ ...paymentForm, card: e.target.value })}
-                          className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs text-[var(--color-brand-dark)] focus:border-[var(--color-brand-olive-dense)] outline-none font-sans font-bold tracking-widest"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-[11px] font-extrabold uppercase text-[var(--color-brand-text-muted)] tracking-wider mb-1 font-sans">Date Expiration</label>
-                        <input
-                          required
-                          type="text"
-                          placeholder="12/28"
-                          value={paymentForm.expiry}
-                          onChange={(e) => setPaymentForm({ ...paymentForm, expiry: e.target.value })}
-                          className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs text-[var(--color-brand-dark)] focus:border-[var(--color-brand-olive-dense)] outline-none font-sans font-bold tracking-wider"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block text-[11px] font-extrabold uppercase text-[var(--color-brand-text-muted)] tracking-wider mb-1 font-sans">Code CVV</label>
-                        <input
-                          required
-                          type="password"
-                          placeholder="***"
-                          maxLength={3}
-                          value={paymentForm.cvc}
-                          onChange={(e) => setPaymentForm({ ...paymentForm, cvc: e.target.value })}
-                          className="w-full bg-white border border-zinc-200 rounded-xl px-3 py-2 text-xs text-[var(--color-brand-dark)] focus:border-[var(--color-brand-olive-dense)] outline-none font-sans font-bold tracking-wider"
-                        />
-                      </div>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full bg-[var(--color-brand-olive-dense)] hover:bg-[var(--color-brand-dark)] text-white font-bold text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 mt-2"
-                    >
-                      <Heart className="w-3.5 h-3.5 fill-current" />
-                      Confirmer le Don / ${activeAmount}.00 USD
-                    </button>
-                  </form>
-                )}
-              </div>
-            )}
-
-            {/* 4. DETAILS OF THE SELECTED PROJECT */}
+            {/* 3. DETAILS OF THE SELECTED PROJECT */}
             {type === "project_detail" && selectedProject && (
               <div className="space-y-4">
                 

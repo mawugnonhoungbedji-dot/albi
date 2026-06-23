@@ -242,6 +242,123 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
         </div>
       </div>
 
+      {/* SECTION 1.5: DEDICATED NARRATIVE SECTION - FADELLE HOUNGUE & LA GENÈSE */}
+      <div className="bg-white border-t border-b border-zinc-200/40 py-16 md:py-24 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-1/3 right-0 w-72 h-72 rounded-full bg-[var(--color-brand-olive-pale)]/50 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-amber-100/40 blur-2xl pointer-events-none" />
+
+        <div className="px-4 md:px-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Image Column */}
+            <div className="lg:col-span-5 flex flex-col items-center">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="relative w-full max-w-md bg-white p-4.5 rounded-[2.5rem] shadow-xl border border-zinc-150/80"
+              >
+                {/* Accent ribbon */}
+                <div className="absolute -top-3 -right-3 bg-amber-500 text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md z-10">
+                  Fondatrice
+                </div>
+
+                <div className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-zinc-100 border border-zinc-100 relative group">
+                  <img 
+                    src="/images/Fondatrice.webp" 
+                    alt="Carine HOUNGUE, Fondatrice de Albi International" 
+                    className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-80" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <h3 className="font-display font-black text-xl leading-tight">Carine HOUNGUE</h3>
+                    <p className="text-orange-100/90 text-xs font-semibold mt-1">Fondatrice d'Albi International</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Sister Tribute Sub-card */}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="w-full max-w-md mt-6 bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/40 rounded-2.5xl p-5 shadow-sm"
+              >
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 rounded-full bg-amber-500/10 flex items-center justify-center shrink-0">
+                    <Sparkles className="w-5 h-5 text-amber-600" />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="font-display font-black text-xs uppercase tracking-wider text-amber-850">Hommage & Mémoire</h4>
+                    <p className="text-zinc-700 text-xs font-semibold leading-relaxed">
+                      Fadelle HOUNGUE (1985 - 2017). Mannequin et diplômée, son courage face au cancer de la peau est le socle fondateur d'Albi International.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Narrative Text Column */}
+            <div className="lg:col-span-7 space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="space-y-4"
+              >
+                <span className="inline-flex items-center gap-2 bg-[var(--color-brand-olive-pale)] text-[var(--color-brand-olive-dense)] px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest border border-[var(--color-brand-olive)]/20">
+                  <Heart className="w-3.5 h-3.5 fill-current text-rose-500 animate-pulse" />
+                  L'étincelle fondatrice de l'ONG
+                </span>
+                
+                <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-[var(--color-brand-dark)] leading-tight tracking-tight m-0">
+                  Fadelle HOUNGUE : Une lumière qui continue de briller
+                </h2>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="space-y-4 text-[var(--color-brand-text-muted)] text-xs sm:text-sm font-medium leading-relaxed"
+              >
+                <p>
+                  <strong className="text-[var(--color-brand-dark)] font-extrabold">Fadelle HOUNGUE</strong> était une jeune femme pleine de vie, de grâce et d’ambition. Diplômée d'un BAC+2 et Mannequin de profession, elle illuminait les podiums par son élégance naturelle, son sourire et sa détermination. Derrière cette image rayonnante se cachait pourtant un combat silencieux qui allait bouleverser le destin de toute une famille.
+                </p>
+
+                <p>
+                  Atteinte d'un cancer de la peau, Fadelle a mené une lutte courageuse durant plusieurs années. Entre les consultations médicales, les séances de chimiothérapie, les traitements lourds et les interventions chirurgicales, elle s'est battue avec une force admirable. Chaque étape était une épreuve, chaque espoif suivi d'une nouvelle bataille. Malgré sa détermination et celle de ses proches, la maladie a fini par l'emporter dans sa 32ᵉ année, laissant derrière elle un jeune fils et une famille profondément marquée par son départ.
+                </p>
+
+                <p>
+                  Parmi ceux qui ont vécu cette épreuve au plus près se trouvait sa sœur, <strong className="text-[var(--color-brand-dark)] font-extrabold">Carine HOUNGUE</strong>. Jour après jour, elle a été témoin de la douleur physique, des difficultés d'accès aux soins spécialisés, des inquiétudes et des espoirs qui accompagnaient ce combat. Elle a vu une femme forte lutter jusqu'au bout pour sa vie et pour son enfant.
+                </p>
+
+                <div className="bg-[var(--color-brand-olive-pale)]/30 border-l-4 border-[var(--color-brand-olive)] p-5 rounded-r-2xl my-6">
+                  <p className="text-[var(--color-brand-dark)] font-semibold italic text-xs sm:text-sm m-0">
+                    « Le décès de Fadelle n'a pas seulement laissé un vide immense ; il a aussi fait naître une conviction profonde. Carine a compris que trop de personnes vivant avec l'albinisme continuent de faire face aux mêmes risques, souvent dans le silence, faute d'information, de prévention et d'accompagnement adapté. »
+                  </p>
+                </div>
+
+                <p>
+                  C'est de cette douleur transformée en engagement qu'est née l'initiative portée aujourd'hui par <strong className="text-[var(--color-brand-dark)] font-extrabold">Albi International</strong>. Chaque action menée, chaque campagne de sensibilisation, chaque consultation médicale organisée et chaque plaidoyer en faveur des droits des personnes vivant avec l'albinisme portent l'empreinte du souvenir de Fadelle.
+                </p>
+
+                <p>
+                  Son histoire rappelle l'urgence d'agir. Son combat est devenu une mission. Son héritage vit désormais à travers toutes les vies que cette initiative contribue à protéger, accompagner et valoriser. Fadelle n'est plus parmi nous, mais son histoire continue d'inspirer un mouvement qui refuse que d'autres familles traversent les mêmes souffrances dans l'indifférence.
+                </p>
+              </motion.div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       {/* SECTION 2: BENTO GRID SECTION (Comprendre les réalités de l'albinisme) */}
       <div className="bg-white/60 border-t border-b border-zinc-200/40 py-16 md:py-24">
         <div className="px-4 md:px-8 max-w-7xl mx-auto space-y-12">

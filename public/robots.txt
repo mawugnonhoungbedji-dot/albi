@@ -1,0 +1,49 @@
+# robots.txt — Albi International Bénin
+# https://albi-international-benin.org
+
+# ═══════════════════════════════════════════
+# Moteurs de recherche classiques
+# ═══════════════════════════════════════════
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# ═══════════════════════════════════════════
+# Moteurs IA génératifs — GEO (2025-2026)
+# Autoriser l'indexation pour apparaître dans
+# les réponses de ChatGPT, Gemini, Perplexity
+# ═══════════════════════════════════════════
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# ═══════════════════════════════════════════
+# Tous les autres robots
+# ═══════════════════════════════════════════
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://albi-international-benin.org/sitemap.xml
