@@ -12,24 +12,24 @@ interface Props {
 const { 
   title, 
   description = "Soutenez Albi International, l'ONG beninoise qui defend les droits des enfants albinos au Benin. Cremes solaires SPF 50+, kits scolaires adaptes et inclusion sociale.",
-  pageUrl = "https://albi-international-benin.org"
+  pageUrl = "https://www.albi-international.org"
 } = Astro.props;
 
 const jsonLdNgo = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "NGO",
-  "@id": "https://albi-international-benin.org/#organization",
+  "@id": "https://www.albi-international.org/#organization",
   "name": "Albi International Benin",
   "alternateName": "Albi International",
   "description": "ONG beninoise fondee en 2017 par Carine HOUNGUE, elle-meme atteinte d'albinisme, pour defendre les droits des personnes albinos au Benin : distribution de cremes solaires SPF 50+, kits scolaires adaptes, lutte contre les mutilations rituelles et l'exclusion sociale.",
-  "url": "https://albi-international-benin.org",
+  "url": "https://www.albi-international.org",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://albi-international-benin.org/images/Logo.webp",
+    "url": "https://www.albi-international.org/images/Logo.webp",
     "width": 400,
     "height": 400
   },
-  "image": "https://albi-international-benin.org/images/og-share.webp",
+  "image": "https://www.albi-international.org/images/og-share.webp",
   "foundingDate": "2017-06",
   "founder": {
     "@type": "Person",
@@ -157,9 +157,9 @@ const jsonLdEvent = JSON.stringify({
   },
   "organizer": {
     "@type": "NGO",
-    "@id": "https://albi-international-benin.org/#organization",
+    "@id": "https://www.albi-international.org/#organization",
     "name": "Albi International Benin",
-    "url": "https://albi-international-benin.org"
+    "url": "https://www.albi-international.org"
   },
   "isAccessibleForFree": true,
   "inLanguage": "fr"
@@ -181,7 +181,7 @@ const jsonLdEvent = JSON.stringify({
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="https://albi-international-benin.org/images/og-share.webp" />
+    <meta property="og:image" content="https://www.albi-international.org/images/og-share.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Albi International - Defendre les droits des albinos au Benin" />
@@ -194,7 +194,7 @@ const jsonLdEvent = JSON.stringify({
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://albi-international-benin.org/images/og-share.webp" />
+    <meta name="twitter:image" content="https://www.albi-international.org/images/og-share.webp" />
 
     <!-- JSON-LD : NGO + FAQPage + Event (injected via frontmatter to avoid encoding issues) -->
     <script type="application/ld+json" set:html={jsonLdNgo} />

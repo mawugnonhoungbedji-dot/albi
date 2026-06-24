@@ -1,5 +1,5 @@
 # robots.txt — Albi International Bénin
-# https://albi-international-benin.org
+# https://www.albi-international.org
 
 # ═══════════════════════════════════════════
 # Moteurs de recherche classiques
@@ -46,4 +46,4 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://albi-international-benin.org/sitemap.xml
+Sitemap: https://www.albi-international.org/sitemap-index.xml
