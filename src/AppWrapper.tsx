@@ -19,6 +19,7 @@ import Projects from "./components/Projects";
 import SeparatorCampaign from "./components/SeparatorCampaign";
 import GetInvolved from "./components/GetInvolved";
 import GallerySection from "./components/GallerySection";
+import ActionsGallery from "./components/ActionsGallery";
 import ContactModal, { ModalType } from "./components/ContactModal";
 import { ProjectItem } from "./data";
 import { AnimatePresence, motion } from "motion/react";
@@ -390,7 +391,10 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                     </div>
                   </section>
 
-                  {/* SECTION 5: Le Tuteur d’Impact (Calculateur de parrainage interactif de soin) */}
+                  {/* SECTION 5: Galerie d'Impact Terrain (Nos Actions en Images) */}
+                  <ActionsGallery />
+
+                  {/* SECTION 6: Le Tuteur d’Impact (Calculateur de parrainage interactif de soin) */}
                   <section className="max-w-4xl mx-auto px-4 py-20">
                     <div className="bg-white border border-zinc-250 rounded-[2.5rem] p-6.5 md:p-12 space-y-8 shadow-sm justify-between">
                       <div className="text-center space-y-2">
