@@ -179,7 +179,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
 
                       <div className="bg-white border border-zinc-200/80 rounded-[2rem] p-7 md:p-9 space-y-5 flex flex-col justify-between shadow-xs">
                         <div className="space-y-4">
-                          <div className="w-10 h-10 rounded-2xl bg-rose-50 text-rose-700 font-bold border border-rose-150 flex items-center justify-center">
+                          <div className="w-10 h-10 rounded-2xl bg-amber-50 text-amber-700 font-bold border border-amber-200 flex items-center justify-center">
                             <Heart className="w-5 h-5" />
                           </div>
                           <h3 className="font-display font-black text-lg text-[var(--color-brand-dark)] leading-snug">Dignité & Intégration</h3>
@@ -215,7 +215,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                           className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-black text-xs uppercase tracking-wider px-6.5 py-4 rounded-full transition-transform active:scale-95 cursor-pointer flex items-center gap-2 no-underline"
                         >
                           Soutenir la Cause Directe
-                          <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
+                          <Heart className="w-4 h-4 text-amber-500 fill-amber-500" />
                         </a>
                       </div>
                     </div>
@@ -418,8 +418,8 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                                     : "border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50"
                                 }`}
                               >
-                                <span className="block font-bold text-sm text-[var(--color-brand-dark)]">1 Flacon Écran Total SPF 50+</span>
-                                <span className="block text-[10px] font-black text-[var(--color-brand-olive-dense)] mt-0.5">2 500 FCFA (~3.80 €)</span>
+                                <span className="block font-bold text-sm text-[var(--color-brand-dark)]">1 Flacon de Crème Solaire SPF 50+</span>
+                                <span className="block text-[10px] font-black text-[var(--color-brand-olive-dense)] mt-0.5">10 000 FCFA (~15.20 €)</span>
                               </button>
                               
                               <button 
@@ -430,8 +430,8 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                                     : "border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50"
                                 }`}
                               >
-                                <span className="block font-bold text-sm text-[var(--color-brand-dark)]">Kit Scolaire Optimisé de Vision</span>
-                                <span className="block text-[10px] font-black text-[var(--color-brand-olive-dense)] mt-0.5">5 000 FCFA (~7.60 €)</span>
+                                <span className="block font-bold text-sm text-[var(--color-brand-dark)]">Kit Solaire Complet (Crème, Chapeau, Lunettes)</span>
+                                <span className="block text-[10px] font-black text-[var(--color-brand-olive-dense)] mt-0.5">15 000 FCFA (~22.90 €)</span>
                               </button>
 
                               <button 
@@ -443,7 +443,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                                 }`}
                               >
                                 <span className="block font-bold text-sm text-[var(--color-brand-dark)]">Parrainage Médical Annuel Intégral</span>
-                                <span className="block text-[10px] font-black text-[var(--color-brand-olive-dense)] mt-0.5">25 000 FCFA (~38.00 €)</span>
+                                <span className="block text-[10px] font-black text-[var(--color-brand-olive-dense)] mt-0.5">30 000 FCFA (~45.70 €)</span>
                               </button>
                             </div>
                           </div>
@@ -477,10 +477,10 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                             <div>
                               <span className="text-xs text-zinc-500 font-semibold block">Total Équivalent :</span>
                               <span className="font-display font-black text-3xl text-[var(--color-brand-dark)] leading-none block mt-1.5">
-                                {(sponsorshipType === "cream" ? 2500 : sponsorshipType === "kit" ? 5000 : 25000) * sponsorshipQty} FCFA
+                                {(sponsorshipType === "cream" ? 10000 : sponsorshipType === "kit" ? 15000 : 30000) * sponsorshipQty} FCFA
                               </span>
                               <span className="text-[11px] text-zinc-500 font-bold block mt-1">
-                                soit environ {(((sponsorshipType === "cream" ? 2500 : sponsorshipType === "kit" ? 5000 : 25000) * sponsorshipQty) / 655.957).toFixed(1)} €
+                                soit environ {(((sponsorshipType === "cream" ? 10000 : sponsorshipType === "kit" ? 15000 : 30000) * sponsorshipQty) / 655.957).toFixed(1)} €
                               </span>
                             </div>
 
@@ -488,10 +488,10 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                               <span className="text-xs text-zinc-400 font-black block uppercase tracking-wider mb-1">Impact généré :</span>
                               <p className="text-zinc-750 text-xs font-semibold leading-relaxed">
                                 {sponsorshipType === "cream" && (
-                                  <>Garantit la protection de <span className="text-[var(--color-brand-olive-dense)] font-extrabold font-mono">{sponsorshipQty}</span> enfant(s) atteint(s) d'albinisme contre les brûlures graves de derme au Bénin durant tout un mois.</>
+                                  <>Garantit la protection de <span className="text-[var(--color-brand-olive-dense)] font-extrabold font-mono">{sponsorshipQty}</span> enfant(s) atteint(s) d'albinisme avec de la crème solaire SPF 50+ de qualité au Bénin durant tout un mois.</>
                                 )}
                                 {sponsorshipType === "kit" && (
-                                  <>Fournit à <span className="text-[var(--color-brand-olive-dense)] font-extrabold font-mono">{sponsorshipQty}</span> élève(s) vulnérable(s) un trousseau de visibilité optimisé réduisant de 100% la fatigue oculaire à l'école.</>
+                                  <>Fournit à <span className="text-[var(--color-brand-olive-dense)] font-extrabold font-mono">{sponsorshipQty}</span> enfant(s) un kit solaire complet constitué de : une crème solaire, un chapeau à larges bords et des lunettes solaires.</>
                                 )}
                                 {sponsorshipType === "annual" && (
                                   <>Assure un suivi dermatologique universel, verres correcteurs de haute qualité et fournitures de soin pour <span className="text-[var(--color-brand-olive-dense)] font-extrabold font-mono">{sponsorshipQty}</span> enfant(s) vulnérable(s) toute l'année.</>
@@ -505,13 +505,13 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                               href={`https://wa.me/22997494591?text=${encodeURIComponent(
                                 `Bonjour AlbiInternational ! Je souhaite parrainer ${sponsorshipQty} x [${
                                   sponsorshipType === "cream" 
-                                    ? "Flacon Écran Total SPF 50+" 
+                                    ? "Flacon de Crème Solaire SPF 50+" 
                                     : sponsorshipType === "kit" 
-                                      ? "Kit Scolaire de Vision" 
+                                      ? "Kit Solaire Complet (Crème, Chapeau, Lunettes)" 
                                       : "Parrainage Médical Annuel"
                                 }] évalué à ${
-                                  (sponsorshipType === "cream" ? 2500 : sponsorshipType === "kit" ? 5000 : 25000) * sponsorshipQty
-                                } FCFA pour aider directly au Bénin.`
+                                  (sponsorshipType === "cream" ? 10000 : sponsorshipType === "kit" ? 15000 : 30000) * sponsorshipQty
+                                } FCFA pour aider directement au Bénin.`
                               )}`}
                               target="_blank"
                               rel="noopener noreferrer"
@@ -588,7 +588,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="bg-white p-6 md:p-8 rounded-3xl border border-zinc-150 space-y-4">
-                        <div className="flex items-center gap-2 text-rose-600">
+                        <div className="flex items-center gap-2 text-amber-600">
                           <X className="w-5 h-5 stroke-[2.5]" />
                           <span className="font-display font-black text-sm uppercase tracking-wider">La Fausse Croyance</span>
                         </div>
@@ -600,7 +600,7 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
                       </div>
 
                       <div className="bg-white p-6 md:p-8 rounded-3xl border border-zinc-150 space-y-4">
-                        <div className="flex items-center gap-2 text-rose-600">
+                        <div className="flex items-center gap-2 text-amber-600">
                           <X className="w-5 h-5 stroke-[2.5]" />
                           <span className="font-display font-black text-sm uppercase tracking-wider">La Fausse Croyance</span>
                         </div>
@@ -850,6 +850,11 @@ export default function AppWrapper({ pageId }: { pageId: string }) {
             <p className="text-[var(--color-brand-beige)]/80 text-xs md:text-sm max-w-sm leading-relaxed font-normal md:font-medium">
               Rejoignez notre réseau de solidarité au Bénin. Notre combat vise à offrir une protection cutanée adéquate, un accès durable à l'éducation inclusive et la pleine réhabilitation sociale pour chaque personne atteinte d'albinisme.
             </p>
+            <div className="pt-2 text-xs text-[var(--color-brand-beige)]/70 space-y-1">
+              <span className="block font-bold text-[var(--color-brand-olive-light)]">Contactez-nous :</span>
+              <a href="mailto:albiiinternationale@gmail.com" className="text-white hover:text-[var(--color-brand-olive-light)] hover:underline font-mono block">albiiinternationale@gmail.com</a>
+              <span className="block font-mono text-[var(--color-brand-beige)]/60">+229 97 49 45 91</span>
+            </div>
           </div>
 
           {/* Quick links Column */}

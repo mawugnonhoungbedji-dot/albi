@@ -75,8 +75,8 @@ export default function SolidarityCarousel({ onCardClick }: SolidarityCarouselPr
       description: "Participer financièrement à l'achat de soins de secours, offrir des lunettes UV ou devenir parrain d'un orphelin.",
       image: "/images/albi_applying_sunscreen_1781884143114.webp",
       category: "Soutien",
-      icon: <Heart className="w-5 h-5 text-rose-600" />,
-      tagColor: "bg-rose-100/90 text-rose-900 border-rose-200"
+      icon: <Heart className="w-5 h-5 text-amber-600" />,
+      tagColor: "bg-amber-100/90 text-amber-900 border-amber-200"
     },
     {
       id: "philosophy", // Maps to philosophy perspectives

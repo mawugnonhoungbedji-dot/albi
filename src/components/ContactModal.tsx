@@ -22,6 +22,27 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const subjects: Record<string, string> = {
+      general: "Demande d'informations générales",
+      volunteer: "Devenir Bénévole Actif au Bénin",
+      media: "Partenariats & Médias",
+      donation: "Dons de crèmes solaires SPF / Lunettes / Chapeaux",
+    };
+    
+    const subject = encodeURIComponent(`Contact Site Web - ${subjects[contactForm.topic] || "Demande d'informations"}`);
+    const body = encodeURIComponent(
+      `Bonjour l'association Albi International,\n\n` +
+      `Vous avez reçu un nouveau message de contact depuis le site web :\n\n` +
+      `- Nom Complet : ${contactForm.name}\n` +
+      `- Adresse Email de l'expéditeur : ${contactForm.email}\n` +
+      `- Sujet : ${subjects[contactForm.topic] || contactForm.topic}\n\n` +
+      `Message :\n"${contactForm.message}"\n\n` +
+      `Cordialement.`
+    );
+    
+    window.location.href = `mailto:albiiinternationale@gmail.com?subject=${subject}&body=${body}`;
+
     setContactSuccess(true);
     setTimeout(() => {
       setContactSuccess(false);
@@ -32,6 +53,20 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
 
   const handleShareSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const subject = encodeURIComponent("Nouveau Témoignage d'Encouragement - Albi International");
+    const body = encodeURIComponent(
+      `Bonjour Albi International,\n\n` +
+      `Voici mon témoignage d'encouragement soumis depuis le site web :\n\n` +
+      `- Nom / Prénom : ${shareForm.username}\n` +
+      `- Ville & Pays : ${shareForm.location}\n` +
+      `- Action / Motivation : ${shareForm.action}\n\n` +
+      `Message d'espoir :\n"${shareForm.message}"\n\n` +
+      `Cordialement.`
+    );
+    
+    window.location.href = `mailto:albiiinternationale@gmail.com?subject=${subject}&body=${body}`;
+
     setShareSuccess(true);
     setTimeout(() => {
       setShareSuccess(false);
@@ -159,6 +194,9 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
                     </button>
                   </form>
                 )}
+                <div className="mt-4 pt-3 border-t border-zinc-200/60 text-center text-[11px] text-zinc-500 font-medium">
+                  Vous pouvez aussi nous écrire directement à : <a href="mailto:albiiinternationale@gmail.com" className="text-[var(--color-brand-olive-dense)] font-bold hover:underline">albiiinternationale@gmail.com</a>
+                </div>
               </div>
             )}
 
@@ -170,9 +208,9 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
                     <div className="w-14 h-14 rounded-full bg-[var(--color-brand-olive-pale)] flex items-center justify-center mx-auto mb-4 text-[var(--color-brand-olive-dense)]">
                       <Check className="w-7 h-7" />
                     </div>
-                    <span className="font-display font-black text-xl text-[var(--color-brand-dark)]">Témoignage Publié !</span>
+                    <span className="font-display font-black text-xl text-[var(--color-brand-dark)]">Témoignage Envoyé !</span>
                     <p className="text-zinc-700 text-xs mt-2.5 max-w-xs mx-auto leading-relaxed">
-                      Votre témoignage d'encouragement a été envoyé aux coordinateurs d'Albi International. Merci pour votre humanisme ✋
+                      Votre messagerie a été ouverte pour envoyer votre témoignage d'encouragement aux coordinateurs d'Albi International. Merci pour votre soutien ! ✋
                     </p>
                   </motion.div>
                 ) : (
@@ -236,8 +274,8 @@ export default function ContactModal({ type, selectedProject, onClose }: Contact
                       type="submit"
                       className="w-full bg-[var(--color-brand-dark)] hover:bg-black text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
                     >
-                      <Share2 className="w-3.5 h-3.5" />
-                      Publier sur le mur des espoirs
+                      <Send className="w-3.5 h-3.5" />
+                      Envoyer le témoignage par E-mail
                     </button>
                   </form>
                 )}

@@ -294,7 +294,7 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
                   <div className="space-y-1">
                     <h4 className="font-display font-black text-xs uppercase tracking-wider text-amber-850">Hommage & Mémoire</h4>
                     <p className="text-zinc-700 text-xs font-semibold leading-relaxed">
-                      Fadelle HOUNGUE (1985 - 2017). Mannequin et diplômée, son courage face au cancer de la peau est le socle fondateur d'Albi International.
+                      Fadelle HOUNGUE (1979 - 2014). Mannequin et diplômée, son courage face au cancer de la peau est le socle fondateur d'Albi International.
                     </p>
                   </div>
                 </div>
@@ -311,7 +311,7 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
                 className="space-y-4"
               >
                 <span className="inline-flex items-center gap-2 bg-[var(--color-brand-olive-pale)] text-[var(--color-brand-olive-dense)] px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest border border-[var(--color-brand-olive)]/20">
-                  <Heart className="w-3.5 h-3.5 fill-current text-rose-500 animate-pulse" />
+                  <Heart className="w-3.5 h-3.5 fill-current text-amber-500 animate-pulse" />
                   L'étincelle fondatrice de l'ONG
                 </span>
                 
@@ -332,7 +332,7 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
                 </p>
 
                 <p>
-                  Atteinte d'un cancer de la peau, Fadelle a mené une lutte courageuse durant plusieurs années. Entre les consultations médicales, les séances de chimiothérapie, les traitements lourds et les interventions chirurgicales, elle s'est battue avec une force admirable. Chaque étape était une épreuve, chaque espoif suivi d'une nouvelle bataille. Malgré sa détermination et celle de ses proches, la maladie a fini par l'emporter dans sa 32ᵉ année, laissant derrière elle un jeune fils et une famille profondément marquée par son départ.
+                  Atteinte d'un cancer de la peau, Fadelle a mené une lutte courageuse durant plusieurs années. Entre les consultations médicales, les séances de chimiothérapie, les traitements lourds et les interventions chirurgicales, elle s'est battue avec une force admirable. Chaque étape était une épreuve, chaque espoir suivi d'une nouvelle bataille. Malgré sa détermination et celle de ses proches, la maladie a fini par l'emporter dans sa 35ᵉ année, laissant derrière elle un jeune fils et une famille profondément marquée par son départ.
                 </p>
 
                 <p>
@@ -907,12 +907,12 @@ export default function Introduction({ onAboutClick, onCampaignsClick }: Introdu
 
       {/* SECTION 6: ETHICAL PLEDGE (Le Serment Éthique & Transparence 100% Directe) */}
       <div className="px-4 md:px-8 py-16 md:py-24 max-w-5xl mx-auto text-center space-y-8">
-        <div className="w-12 h-12 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center mx-auto mb-2 border border-rose-100 animate-pulse">
-          <Heart className="w-6 h-6 fill-rose-500" />
+        <div className="w-12 h-12 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-2 border border-amber-100 animate-pulse">
+          <Heart className="w-6 h-6 fill-amber-500" />
         </div>
         
         <div className="max-w-2xl mx-auto space-y-4">
-          <span className="text-[10px] font-black uppercase text-rose-700 tracking-widest bg-rose-50 border border-rose-100 px-3.5 py-1.5 rounded-full">
+          <span className="text-[10px] font-black uppercase text-amber-700 tracking-widest bg-amber-50 border border-amber-100 px-3.5 py-1.5 rounded-full">
             Notre Serment Invisible
           </span>
           <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-[var(--color-brand-dark)] leading-tight tracking-tight">
